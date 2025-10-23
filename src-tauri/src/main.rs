@@ -3,7 +3,7 @@
     windows_subsystem = "windows"
 )]
 
-use tauri::{Manager, WindowEvent, api::shell};
+use tauri::{api::shell, Manager, WindowEvent};
 
 fn main() {
     app_lib::run_with(|app| {
