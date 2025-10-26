@@ -69,3 +69,27 @@ fn main() {
         let _ = window.eval(injected_js);
     });
 }
+
+// Add to src-tauri/src/main.rs
+
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
+
+mod window;
+
+fn main() {
+    tauri::Builder::default()
+        .invoke_handler(tauri::generate_handler![
+            window::go_back,
+            window::go_forward,
+            window::reload_page
+        ])
+        .setup(|app| {
+            // Your existing setup code here
+            Ok(())
+        })
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
+}
