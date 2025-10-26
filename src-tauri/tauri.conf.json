@@ -15,15 +15,11 @@
   },
   "build": {
     "frontendDist": "../dist"
-  }
-}
-
-{
+  },
   "tauri": {
     "windows": [
       {
-        "decorations": false,
-        "title": "Pake App",
+        "title": "Weekly",
         "width": 1200,
         "height": 800,
         "minWidth": 800,
@@ -31,9 +27,8 @@
         "resizable": true,
         "fullscreen": false,
         "decorations": false,
-        "transparent": true,
-        "center": true,
-        "url": "index.html"
+        "transparent": false,
+        "center": true
       }
     ],
     "allowlist": {
